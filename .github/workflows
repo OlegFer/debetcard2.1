@@ -17,7 +17,6 @@
  - имя: предоставить разрешение на выполнение для
         запуска gradlew: chmod + x gradlew
  - name: Start SUT
-        run: java -jar ./artifacts/app-order.jar & # Имя файла SUT будет отличаться в каждой задаче
+        run: java -jar ./artifacts/app-order.jar &
  - name: Build with Gradle
-        run: ./gradlew test --info # Для проектов на базе Selenide необходимо добавить параметр для запуска браузера
-                                    # в headless режиме -Dselenide.headless=true
+        run: gradlew test -Dselenide.headless=true
